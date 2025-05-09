@@ -3,25 +3,39 @@ using System;
 class Program
 {
     static void Main(string[] args)
-    {
-        // Ask the user for the magic number
-        Console.Write("Enter the Magic Number: ");
-        string magicInput = Console.ReadLine();
-        float magicNumber = int.Parse(magicInput);
+    {   
+        float guess = -1;
+        Random randomGenerator = new Random();
+        int magicNumber = randomGenerator.Next(1, 101);
+        int guesses = 0; 
 
-        //Asks the user for guess
-        Console.Write("Enter your guess: ");
-        string guessInput = Console.ReadLine();
-        float guess = int.Parse(guessInput);
+        string choice = "yes";
 
-        if (guess < magicNumber) {
-            Console.WriteLine("Higher");
-        }
-        else if (guess > magicNumber) {
-            Console.WriteLine("Lower!");
-        }
-        else {
-            Console.WriteLine("You guessed it!");
+        while (choice.ToLower() == "yes") {
+
+            //Asks the user for guess
+            Console.Write("Enter your guess: ");
+            string guessInput = Console.ReadLine();
+            guess = int.Parse(guessInput);
+            guesses += 1;
+
+            if (guess < magicNumber) {
+                Console.WriteLine("Higher");
+            }
+            else if (guess > magicNumber) {
+                Console.WriteLine("Lower!");
+            }
+            else {
+                Console.WriteLine($"You guessed it!. It took you {guesses} guesses.");
+                Console.Write("Do you want to keep playing? ");
+                choice = Console.ReadLine().ToLower();
+
+                if (choice == "yes") {
+                    magicNumber = randomGenerator.Next(1, 101);
+                    guesses = 0;
+                }
+            }
+            
         }
     }
 }
