@@ -9,6 +9,7 @@ class Program
         int total = 0;
         int highestNum = -1;
         int lowestNum = 9999999;
+        
         List<int> numberList = new List<int>();
 
         while (number != 0) {
