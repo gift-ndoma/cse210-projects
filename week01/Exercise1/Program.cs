@@ -4,12 +4,17 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.Write("What is your first name? ");
-        string fname = Console.ReadLine();
+        Movie movie = new Movie();
+        movie._name = "Love Next Door";
+        movie._director = "Yoo Je-Won";
+        movie._year = 2024;
 
-        Console.Write("What is your last name? ");
-        string lname = Console.ReadLine();
+        movie.AddLeads("Jung Hae-in");
+        movie.AddLeads("Jung So-min");
+        movie.AddLeads("Kim Ji-eun");
+        movie.AddLeads("Yoon Ji-on");
 
-        Console.WriteLine($"Your name is {lname}, {fname} {lname}.");
+        movie.DisplayMovieInfo();
+        movie.ShowActors();
     }
 }
