@@ -1,0 +1,4 @@
+0
+SimpleGoal: Give a talk, Speak in Sacrament meeting, 100, False
+EternalGoal: Study my Scriptures, Study for at least 10 minutes, 50
+ChecklistGoal: Attend the temple, Attend and perform any ordinace, 50, 3, 500, 0
